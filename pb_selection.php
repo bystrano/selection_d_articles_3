@@ -19,7 +19,7 @@ function pb_selection_interface ( $vars="" ) {
 
 		$ret .= "<div id='pave_selection'>";
 	
-		$page = evaluer_fond("selection_interface", $contexte);
+		$page = evaluer_fond("selection_interface_new", $contexte);
 		$ret .= $page["texte"];
 
 		$ret .= "</div>";
