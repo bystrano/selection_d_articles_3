@@ -31,5 +31,20 @@ function formulaires_selection_d_articles_yaml_verifier_dist ($id_rubrique) {
 
 function formulaires_selection_d_articles_yaml_traiter_dist ($id_rubrique) {
 
-  if (liste_objets_traiter('selection')) return;
+  liste_objets_traiter('selection');
+
+  $selection = _request('selection');
+
+  include_spip('base/abstract_sql');
+
+  sql_delete('spip_pb_selection', 'id_rubrique='.intval($id_rubrique));
+
+  foreach ($selection as $i => $article) {
+    $id_article = str_replace('article|', '', $article['article'][0]);
+    sql_insertq('spip_pb_selection', array(
+                                       'id_rubrique' => $id_rubrique,
+                                       'id_article'  => $id_article,
+                                       'ordre'       => $i,
+                                     ));
+  }
 }
