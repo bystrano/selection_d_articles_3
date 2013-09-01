@@ -3,3 +3,29 @@
   padding-left: 30px;
   font-weight: bold;
   line-height: 2; }
+.formulaire_selection_d_articles .saisie_selecteur_article ul.select {
+  width: 85%; }
+.formulaire_selection_d_articles .saisie_selecteur_article li.article {
+  display: table;
+  width: 85%;
+  border-collapse: collapse; }
+  .formulaire_selection_d_articles .saisie_selecteur_article li.article > span {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    padding: 0 7px;
+    text-align: left; }
+    .formulaire_selection_d_articles .saisie_selecteur_article li.article > span.puce_objet {
+      width: 100px; }
+      .formulaire_selection_d_articles .saisie_selecteur_article li.article > span.puce_objet img {
+        position: relative;
+        top: -3px; }
+    .formulaire_selection_d_articles .saisie_selecteur_article li.article > span.logo {
+      width: 50px;
+      display: block; }
+.formulaire_selection_d_articles .saisie_selecteur_article .item_picker {
+  clear: none;
+  float: right;
+  width: 100%; }
+.formulaire_selection_d_articles .saisie_selecteur_article .sep {
+  display: none !important; }
