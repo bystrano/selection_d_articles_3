@@ -29,11 +29,6 @@
 		<inclure>base/pb_selection_install.php</inclure>
 	</pipeline>
 	<pipeline>
-		<nom>affiche_enfants</nom>
-		<action>interface</action>
-		<inclure>pb_selection.php</inclure>
-	</pipeline>
-	<pipeline>
 		<nom>jqueryui_plugins</nom>
 		<inclure>pb_selection.php</inclure>
 	</pipeline>
