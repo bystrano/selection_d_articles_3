@@ -1,0 +1,27 @@
+<BOUCLE_sel(ARTICLES){id_article IN #ENV{selected}|picker_selected{article}}{statut?}{tout}>
+  <li class='article'>
+    <input type="hidden"
+           name="[(#ENV{name,id_item})][]"
+           value="article|#ID_ARTICLE"
+           />
+    [(#REM) on n'ajoute des choses que pour la saisie utilisée dans le
+            #FORMULAIRE_SELECTION_D_ARTICLES. ]
+    [(#ENV{name}|match{^selection}|oui)
+      [(#STATUT|puce_statut{article, #ID_ARTICLE, #ID_RUBRIQUE})]
+      <span class="logo">
+        [(#LOGO_ARTICLE
+          |image_passe_partout{30,30}
+          |image_recadre{30,30}
+        )]
+      </span>
+    ][(#REM) fin ajouts ]
+    [(#ENV{afficher_langue,0}|oui)[&#91;(#LANG)&#93;] ]<span>#TITRE</span>
+
+    [(#ENV{select,''}|non)
+      <a href='#' onclick='jQuery(this).item_unpick();return false;'>
+        <img src='#ENV{img_unpick}' alt='' />
+      </a>
+    ]
+    <span class="sep">, </span>
+  </li>
+</BOUCLE_sel>
