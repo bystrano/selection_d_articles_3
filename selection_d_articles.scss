@@ -13,13 +13,14 @@
     }
     li.article {
       display: table;
-      width: 85%;
+      width: 100%;
       border-collapse: collapse;
       &> span {
         display: table-cell;
         vertical-align: middle;
         width: 100%;
         padding: 0 7px;
+        text-align: left;
         &.puce_objet {
           width: 100px;
           img {
@@ -31,7 +32,11 @@
           width: 50px;
           display: block;
         }
-        text-align: left;
+        .date {
+          font-weight: normal;
+          font-size: 13px;
+          float: right;
+        }
       }
     }
     .item_picker {

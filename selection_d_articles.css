@@ -7,7 +7,7 @@
   width: 85%; }
 .formulaire_selection_d_articles .saisie_selecteur_article li.article {
   display: table;
-  width: 85%;
+  width: 100%;
   border-collapse: collapse; }
   .formulaire_selection_d_articles .saisie_selecteur_article li.article > span {
     display: table-cell;
@@ -23,6 +23,10 @@
     .formulaire_selection_d_articles .saisie_selecteur_article li.article > span.logo {
       width: 50px;
       display: block; }
+    .formulaire_selection_d_articles .saisie_selecteur_article li.article > span .date {
+      font-weight: normal;
+      font-size: 13px;
+      float: right; }
 .formulaire_selection_d_articles .saisie_selecteur_article .item_picker {
   clear: none;
   float: right;
