@@ -1,11 +1,11 @@
 <?php
 
-function formulaires_selection_d_articles_yaml_charger_dist ($id_rubrique) {
+function formulaires_selection_d_articles_yaml_charger_dist ($id_selection) {
 
   include_spip('base/abstract_sql');
 
   $selection = sql_allfetsel('id_article', 'spip_pb_selection',
-                             'id_rubrique=' . intval($id_rubrique),
+                             'id_selection=' . intval($id_selection),
                              '','ordre');
 
   $valeurs_saisie_selection = array();
@@ -24,12 +24,12 @@ function formulaires_selection_d_articles_yaml_charger_dist ($id_rubrique) {
   return $contexte;
 }
 
-function formulaires_selection_d_articles_yaml_verifier_dist ($id_rubrique) {
+function formulaires_selection_d_articles_yaml_verifier_dist ($id_selection) {
 
   if (liste_objets_verifier('selection')) return;
 }
 
-function formulaires_selection_d_articles_yaml_traiter_dist ($id_rubrique) {
+function formulaires_selection_d_articles_yaml_traiter_dist ($id_selection) {
 
   liste_objets_traiter('selection');
 
@@ -37,14 +37,14 @@ function formulaires_selection_d_articles_yaml_traiter_dist ($id_rubrique) {
 
   include_spip('base/abstract_sql');
 
-  sql_delete('spip_pb_selection', 'id_rubrique='.intval($id_rubrique));
+  sql_delete('spip_pb_selection', 'id_selection='.intval($id_selection));
 
   foreach ($selection as $i => $article) {
     $id_article = str_replace('article|', '', $article['article'][0]);
     sql_insertq('spip_pb_selection', array(
-                                       'id_rubrique' => $id_rubrique,
-                                       'id_article'  => $id_article,
-                                       'ordre'       => $i,
+                                       'id_selection' => $id_selection,
+                                       'id_article'   => $id_article,
+                                       'ordre'        => $i,
                                      ));
   }
 }
