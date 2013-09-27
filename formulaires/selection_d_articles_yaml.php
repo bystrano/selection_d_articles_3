@@ -37,7 +37,7 @@ function formulaires_selection_d_articles_yaml_traiter_dist ($id_selection) {
 
   include_spip('base/abstract_sql');
 
-  sql_delete('spip_pb_selection', 'id_selection='.intval($id_selection));
+  sql_delete('spip_pb_selection', 'id_selection='.sql_quote($id_selection));
 
   foreach ($selection as $i => $article) {
     $id_article = str_replace('article|', '', $article['article'][0]);
