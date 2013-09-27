@@ -5,7 +5,7 @@ function formulaires_selection_d_articles_yaml_charger_dist ($id_selection) {
   include_spip('base/abstract_sql');
 
   $selection = sql_allfetsel('id_article', 'spip_pb_selection',
-                             'id_selection=' . intval($id_selection),
+                             'id_selection=' . sql_quote($id_selection),
                              '','ordre');
 
   $valeurs_saisie_selection = array();
