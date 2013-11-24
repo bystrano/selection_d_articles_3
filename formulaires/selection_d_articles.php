@@ -1,6 +1,13 @@
 <?php
 
-function formulaires_selection_d_articles_yaml_charger_dist ($id_selection) {
+function formulaires_selection_d_articles_saisies ($id_selection, $nom_form) {
+
+    return yaml_decode(
+               recuperer_fond('formulaires/selection_d_articles.yaml',
+                              array('nom_form' => $nom_form)));
+}
+
+function formulaires_selection_d_articles_charger_dist ($id_selection, $nom_form) {
 
   include_spip('base/abstract_sql');
 
@@ -24,12 +31,12 @@ function formulaires_selection_d_articles_yaml_charger_dist ($id_selection) {
   return $contexte;
 }
 
-function formulaires_selection_d_articles_yaml_verifier_dist ($id_selection) {
+function formulaires_selection_d_articles_verifier_dist ($id_selection, $nom_form) {
 
   if (liste_objets_verifier('selection')) return;
 }
 
-function formulaires_selection_d_articles_yaml_traiter_dist ($id_selection) {
+function formulaires_selection_d_articles_traiter_dist ($id_selection, $nom_form) {
 
   liste_objets_traiter('selection');
 

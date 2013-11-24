@@ -2,7 +2,7 @@
   saisie: liste_objets
   options:
     nom: selection
-    label: [(#ENV{args_form}|table_valeur{1}|sinon{Sélection d'articles})]
+    label: [(#ENV{nom_form}|sinon{Sélection d'articles})]
   saisies:
     - 
       saisie: selecteur_article
