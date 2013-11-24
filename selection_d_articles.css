@@ -33,3 +33,8 @@
   width: 100%; }
 .formulaire_selection_d_articles .saisie_selecteur_article .sep {
   display: none !important; }
+li.saisie_selection_d_articles {
+  padding: 0 10px; }
+  li.saisie_selection_d_articles label {
+    float: none;
+    margin-left: 0; }
