@@ -16,10 +16,10 @@ function selection_d_articles_charger ($id_selection) {
         );
     }
 
-    $req = _request('selection');
+    $req = _request($id_selection);
 
     $contexte = array(
-        'selection' => $req ? $req : $valeurs_saisie_selection,
+        $id_selection => $req ? $req : $valeurs_saisie_selection,
     );
 
     return $contexte;
@@ -27,14 +27,14 @@ function selection_d_articles_charger ($id_selection) {
 
 function selection_d_articles_verifier ($id_selection) {
 
-    $erreurs = liste_objets_verifier('selection');
+    $erreurs = liste_objets_verifier($id_selection);
 
     /* Dans le cas où on a cliqué un submit propre à la saisie, on
        interrompt les traitements du formulaire, mais il faut quand
        même executer les traitements de la saisie selection_d_articles. */
     if (array_key_exists('stop', $erreurs)) {
 
-        $selection = _request('selection');
+        $selection = _request($id_selection);
 
         include_spip('base/abstract_sql');
 
@@ -56,5 +56,5 @@ function selection_d_articles_verifier ($id_selection) {
 
 function selection_d_articles_traiter ($id_selection) {
 
-    return liste_objets_traiter('selection');
+    return liste_objets_traiter($id_selection);
 }

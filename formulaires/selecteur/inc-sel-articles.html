@@ -1,26 +1,18 @@
-[(#REM) on n'ajoute des choses que pour la saisie utilisée dans le
-        #FORMULAIRE_SELECTION_D_ARTICLES. ]
-[(#SET{ajouter_infos, #ENV{name}|match{^selection}|oui})]
-
 <BOUCLE_sel(ARTICLES){id_article IN #ENV{selected}|picker_selected{article}}{statut?}{tout}>
   <li class='article'>
     <input type="hidden"
            name="[(#ENV{name,id_item})][]"
            value="article|#ID_ARTICLE"
            />
-    [(#GET{ajouter_infos})
-      [(#STATUT|puce_statut{article, #ID_ARTICLE, #ID_RUBRIQUE})]
-      <span class="logo">
-        [(#LOGO_ARTICLE
-          |image_passe_partout{30,30}
-          |image_recadre{30,30}
-        )]
-      </span>
-    ]
+    [(#STATUT|puce_statut{article, #ID_ARTICLE, #ID_RUBRIQUE})]
+    <span class="logo">
+      [(#LOGO_ARTICLE
+        |image_passe_partout{30,30}
+        |image_recadre{30,30}
+      )]
+    </span>
     [(#ENV{afficher_langue,0}|oui)[&#91;(#LANG)&#93;] ]<span>#TITRE
-    [(#GET{ajouter_infos})
-      [<span class="date">(#DATE|affdate_jourcourt)</span>]
-    ]</span>
+    [<span class="date">(#DATE|affdate_jourcourt)</span>]
     [(#ENV{select,''}|non)
       <a href='#' onclick='jQuery(this).item_unpick();return false;'>
         <img src='#ENV{img_unpick}' alt='' />

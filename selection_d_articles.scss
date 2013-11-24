@@ -1,6 +1,10 @@
-.formulaire_selection_d_articles {
+li.saisie_selection_d_articles {
 
-  label[for="champ_selection"] {
+  padding: 0 10px;
+
+  &> label {
+    float: none;
+    margin-left: 0;
     background: url("imgs/emblem-favorite.png") no-repeat left -3px;
     padding-left: 30px;
     font-weight: bold;
