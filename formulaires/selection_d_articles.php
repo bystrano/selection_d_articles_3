@@ -2,6 +2,8 @@
 
 function formulaires_selection_d_articles_saisies ($id_selection, $nom_form) {
 
+    include_spip('inc/yaml');
+
     return yaml_decode(
                recuperer_fond('formulaires/selection_d_articles.yaml',
                               array('nom_form' => $nom_form)));

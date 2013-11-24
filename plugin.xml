@@ -39,6 +39,7 @@
 
 
 	<necessite id="SPIP" version="[3.0;]" />
+	<necessite id="yaml" version="[1.5.1;]" />
 	<categorie>navigation</categorie>
 </plugin>
 
