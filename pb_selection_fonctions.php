@@ -35,20 +35,7 @@ function selection_d_articles_verifier ($id_selection) {
     if (array_key_exists('stop', $erreurs)) {
 
         $selection = _request($id_selection);
-
-        include_spip('base/abstract_sql');
-
-        sql_delete('spip_pb_selection',
-                   'id_selection='.sql_quote($id_selection));
-
-        foreach ($selection as $i => $article) {
-            $id_article = str_replace('article|', '', $article['article'][0]);
-            sql_insertq('spip_pb_selection', array(
-                'id_selection' => $id_selection,
-                'id_article'   => $id_article,
-                'ordre'        => $i,
-            ));
-        }
+        enregistrer_selection($id_selection, $selection);
     }
 
     return $erreurs;
@@ -57,4 +44,21 @@ function selection_d_articles_verifier ($id_selection) {
 function selection_d_articles_traiter ($id_selection) {
 
     return liste_objets_traiter($id_selection);
+}
+
+function enregistrer_selection ($id_selection, $selection) {
+
+    include_spip('base/abstract_sql');
+
+    sql_delete('spip_pb_selection',
+    'id_selection='.sql_quote($id_selection));
+
+    foreach ($selection as $i => $article) {
+        $id_article = str_replace('article|', '', $article['article'][0]);
+        sql_insertq('spip_pb_selection', array(
+            'id_selection' => $id_selection,
+            'id_article'   => $id_article,
+            'ordre'        => $i,
+        ));
+    }
 }
