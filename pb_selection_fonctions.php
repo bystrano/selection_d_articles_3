@@ -27,23 +27,20 @@ function selection_d_articles_charger ($id_selection) {
 
 function selection_d_articles_verifier ($id_selection) {
 
-    $erreurs = liste_objets_verifier($id_selection);
+    saisies_liste_verifier($id_selection);
 
-    /* Dans le cas où on a cliqué un submit propre à la saisie, on
-       interrompt les traitements du formulaire, mais il faut quand
-       même executer les traitements de la saisie selection_d_articles. */
-    if (array_key_exists('stop', $erreurs)) {
-
-        $selection = _request($id_selection);
-        enregistrer_selection($id_selection, $selection);
-    }
-
-    return $erreurs;
+    return array();
 }
 
 function selection_d_articles_traiter ($id_selection) {
 
-    return liste_objets_traiter($id_selection);
+    saisies_liste_traiter($id_selection);
+
+    $selection = _request($id_selection);
+
+    enregistrer_selection($id_selection, $selection);
+
+    return array();
 }
 
 function enregistrer_selection ($id_selection, $selection) {
