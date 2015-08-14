@@ -1,56 +1,63 @@
-.formulaire_selection_d_articles li.saisie_liste {
+.formulaire_selection_d_articles {
 
-  padding: 0 10px;
+  li.saisie_liste {
 
-  &> label {
-    float: none;
-    margin-left: 0;
-    background: url("imgs/emblem-favorite.png") no-repeat left -3px;
-    padding-left: 30px;
-    font-weight: bold;
-    line-height: 2;
-    padding-bottom: 5px;
-  }
+    padding: 0 10px;
 
-  .saisie_selecteur_article {
-    ul.select {
-      width: 85%;
+    &> label {
+      float: none;
+      margin-left: 0;
+      background: url("imgs/emblem-favorite.png") no-repeat left -3px;
+      padding-left: 30px;
+      font-weight: bold;
+      line-height: 2;
+      padding-bottom: 5px;
     }
-    li.article {
-      display: table;
-      width: 100%;
-      border-collapse: collapse;
-      &> span {
-        display: table-cell;
-        vertical-align: middle;
+
+    .saisie_selecteur_article {
+      ul.select {
+        width: 85%;
+      }
+      li.article {
+        display: table;
         width: 100%;
-        padding: 0 7px;
-        text-align: left;
-        &.puce_objet {
-          width: 100px;
-          img {
-            position: relative;
-            top: -3px;
+        border-collapse: collapse;
+        &> span {
+          display: table-cell;
+          vertical-align: middle;
+          width: 100%;
+          padding: 0 7px;
+          text-align: left;
+          &.puce_objet {
+            width: 100px;
+            img {
+              position: relative;
+              top: -3px;
+            }
+          }
+          &.logo {
+            width: 50px;
+            display: block;
+          }
+          .date {
+            font-weight: normal;
+            font-size: 13px;
+            float: right;
           }
         }
-        &.logo {
-          width: 50px;
-          display: block;
-        }
-        .date {
-          font-weight: normal;
-          font-size: 13px;
-          float: right;
-        }
+      }
+      .item_picker {
+        clear: none;
+        float: right;
+        width: 100%;
+      }
+      .sep {
+        display: none !important;
       }
     }
-    .item_picker {
-      clear: none;
-      float: right;
-      width: 100%;
-    }
-    .sep {
-      display: none !important;
-    }
+  }
+
+  .box {
+    margin: 0 -10px;
   }
 }

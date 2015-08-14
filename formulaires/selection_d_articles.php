@@ -25,7 +25,10 @@ function formulaires_selection_d_articles_saisies ($id_selection, $nom_form) {
 
 function formulaires_selection_d_articles_charger_dist ($id_selection, $nom_form) {
 
-    return selection_d_articles_charger($id_selection);
+    $contexte = selection_d_articles_charger($id_selection);
+    $contexte['nom_classe'] = str_replace(' ', '-', translitteration(strtolower($nom_form)));
+
+    return $contexte;
 }
 
 function formulaires_selection_d_articles_verifier_dist ($id_selection, $nom_form) {

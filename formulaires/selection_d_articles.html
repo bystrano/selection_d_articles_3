@@ -1,4 +1,6 @@
-<div class="formulaire_spip formulaire_selection_d_articles">
+[(#SET{classe_form, formulaire_selection_d_articles-[(#ENV{nom_classe}|couper{24,''})]})]
+
+<div class="formulaire_spip formulaire_selection_d_articles #GET{classe_form}">
 
   [<div class="reponse_formulaire reponse_formulaire_erreur">
     (#ENV*{message_erreur})
@@ -14,8 +16,22 @@
       #GENERER_SAISIES{#ENV{_saisies}}
     </ul>
 
+    #BOITE_OUVRIR{'','notice none-js'}
+      Les données ont été modifiées, n'oubliez pas de cliquer sur "ok" pour confirmer les changements.
+    #BOITE_FERMER
+
     <p class="boutons">
       <input type="submit" value="OK" />
     </p>
   </form>
+
+  <script type="text/javascript">
+   $(function () {
+     /* On fait apparaître le message d'avertissement quand le
+        formulaire a changé sans submit */
+     $('.#GET{classe_form}').change(function () {
+       $(this).find('.notice').removeClass('none-js');
+     });
+   });
+  </script>
 </div>

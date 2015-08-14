@@ -38,5 +38,7 @@
     width: 100%; }
   .formulaire_selection_d_articles li.saisie_liste .saisie_selecteur_article .sep {
     display: none !important; }
+.formulaire_selection_d_articles .box {
+  margin: 0 -10px; }
 
 /*# sourceMappingURL=selection_d_articles.css.map */
