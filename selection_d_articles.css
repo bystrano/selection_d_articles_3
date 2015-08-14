@@ -6,7 +6,8 @@ li.saisie_selection_d_articles {
     background: url("imgs/emblem-favorite.png") no-repeat left -3px;
     padding-left: 30px;
     font-weight: bold;
-    line-height: 2; }
+    line-height: 2;
+    padding-bottom: 5px; }
   li.saisie_selection_d_articles .saisie_selecteur_article ul.select {
     width: 85%; }
   li.saisie_selection_d_articles .saisie_selecteur_article li.article {
@@ -37,3 +38,5 @@ li.saisie_selection_d_articles {
     width: 100%; }
   li.saisie_selection_d_articles .saisie_selecteur_article .sep {
     display: none !important; }
+
+/*# sourceMappingURL=selection_d_articles.css.map */
