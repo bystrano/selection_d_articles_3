@@ -6,15 +6,17 @@ function formulaires_selection_d_articles_saisies ($id_selection, $nom_form) {
 
     return array(
         array(
-            'saisie' => 'selection_d_articles',
+            'saisie' => 'liste',
             'options' => array(
                 'nom' => $id_selection,
                 'label' => $nom_form ? $nom_form : "Sélection d'articles",
             ),
             'saisies' => array(
-                'saisie' => 'selecteur_article',
-                'options' => array(
-                    'nom' => 'article',
+                array(
+                    'saisie' => 'selecteur_article',
+                    'options' => array(
+                        'nom' => 'article',
+                    ),
                 ),
             ),
         ),

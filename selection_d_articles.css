@@ -1,6 +1,6 @@
-li.saisie_selection_d_articles {
+.formulaire_selection_d_articles li.saisie_liste {
   padding: 0 10px; }
-  li.saisie_selection_d_articles > label {
+  .formulaire_selection_d_articles li.saisie_liste > label {
     float: none;
     margin-left: 0;
     background: url("imgs/emblem-favorite.png") no-repeat left -3px;
@@ -8,35 +8,35 @@ li.saisie_selection_d_articles {
     font-weight: bold;
     line-height: 2;
     padding-bottom: 5px; }
-  li.saisie_selection_d_articles .saisie_selecteur_article ul.select {
+  .formulaire_selection_d_articles li.saisie_liste .saisie_selecteur_article ul.select {
     width: 85%; }
-  li.saisie_selection_d_articles .saisie_selecteur_article li.article {
+  .formulaire_selection_d_articles li.saisie_liste .saisie_selecteur_article li.article {
     display: table;
     width: 100%;
     border-collapse: collapse; }
-    li.saisie_selection_d_articles .saisie_selecteur_article li.article > span {
+    .formulaire_selection_d_articles li.saisie_liste .saisie_selecteur_article li.article > span {
       display: table-cell;
       vertical-align: middle;
       width: 100%;
       padding: 0 7px;
       text-align: left; }
-      li.saisie_selection_d_articles .saisie_selecteur_article li.article > span.puce_objet {
+      .formulaire_selection_d_articles li.saisie_liste .saisie_selecteur_article li.article > span.puce_objet {
         width: 100px; }
-        li.saisie_selection_d_articles .saisie_selecteur_article li.article > span.puce_objet img {
+        .formulaire_selection_d_articles li.saisie_liste .saisie_selecteur_article li.article > span.puce_objet img {
           position: relative;
           top: -3px; }
-      li.saisie_selection_d_articles .saisie_selecteur_article li.article > span.logo {
+      .formulaire_selection_d_articles li.saisie_liste .saisie_selecteur_article li.article > span.logo {
         width: 50px;
         display: block; }
-      li.saisie_selection_d_articles .saisie_selecteur_article li.article > span .date {
+      .formulaire_selection_d_articles li.saisie_liste .saisie_selecteur_article li.article > span .date {
         font-weight: normal;
         font-size: 13px;
         float: right; }
-  li.saisie_selection_d_articles .saisie_selecteur_article .item_picker {
+  .formulaire_selection_d_articles li.saisie_liste .saisie_selecteur_article .item_picker {
     clear: none;
     float: right;
     width: 100%; }
-  li.saisie_selection_d_articles .saisie_selecteur_article .sep {
+  .formulaire_selection_d_articles li.saisie_liste .saisie_selecteur_article .sep {
     display: none !important; }
 
 /*# sourceMappingURL=selection_d_articles.css.map */
