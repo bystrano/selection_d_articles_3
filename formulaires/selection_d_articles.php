@@ -4,14 +4,21 @@ include_spip('pb_selection_fonctions');
 
 function formulaires_selection_d_articles_saisies ($id_selection, $nom_form) {
 
-    include_spip('inc/yaml');
-
-    return yaml_decode(
-               recuperer_fond('formulaires/selection_d_articles.yaml',
-                              array(
-                                  'id_selection' => $id_selection,
-                                  'nom_form'     => $nom_form,
-                              )));
+    return array(
+        array(
+            'saisie' => 'selection_d_articles',
+            'options' => array(
+                'nom' => $id_selection,
+                'label' => $nom_form ? $nom_form : "Sélection d'articles",
+            ),
+            'saisies' => array(
+                'saisie' => 'selecteur_article',
+                'options' => array(
+                    'nom' => 'article',
+                ),
+            ),
+        ),
+    );
 }
 
 function formulaires_selection_d_articles_charger_dist ($id_selection, $nom_form) {
