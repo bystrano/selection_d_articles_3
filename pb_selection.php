@@ -18,5 +18,3 @@ function pb_selection_header_prive ($flux) {
 
   return $flux;
 }
-
-?>

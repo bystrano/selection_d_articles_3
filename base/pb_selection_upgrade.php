@@ -20,5 +20,3 @@ function pb_selection_vider_tables ($nom_meta_base_version) {
   sql_drop_table('spip_pb_selection');
   effacer_meta($nom_meta_base_version);
 }
-
-?>
