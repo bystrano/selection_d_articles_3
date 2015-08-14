@@ -19,27 +19,27 @@
 			  von Schlagworten f&#252;r die Zusammenstellung von Artikeln dar.
 		</multi>
 	</description>
+	<categorie>navigation</categorie>
 	<icon>imgs/emblem-favorite-32.png</icon>
 	<lien>http://www.paris-beyrouth.org/tutoriaux-spip/article/le-plugin-selection-d-articles</lien>
 	<licence>GPL 3</licence>
+
 	<prefix>pb_selection</prefix>
+
 	<install>base/pb_selection_upgrade.php</install>
+
 	<pipeline>
 		<nom>declarer_tables_objets_sql</nom>
 		<inclure>base/pb_selection_install.php</inclure>
 	</pipeline>
-	<pipeline>
-		<nom>jqueryui_plugins</nom>
-		<inclure>pb_selection.php</inclure>
-	</pipeline>
+
   <pipeline>
     <nom>header_prive</nom>
     <inclure>pb_selection.php</inclure>
   </pipeline>
 
-
 	<necessite id="SPIP" version="[3.0;]" />
 	<necessite id="saisie_liste" version="[1.1.0;]" />
-	<categorie>navigation</categorie>
+
 </plugin>
 
