@@ -3,7 +3,7 @@
 	<slogan><multi>[fr]S&#233;lectionner des articles &#224; mettre en avant[de]W&#228;hle die Artikeln nach vorne</multi></slogan>
 	<auteur>ARNO*</auteur>
 	<version>4.3</version>
-	<version_base>0.4.0</version_base>
+	<version_base>0.4.1</version_base>
 	<etat>stable</etat>
 	<description>
 		<multi>
@@ -25,7 +25,7 @@
 	<prefix>pb_selection</prefix>
 	<install>base/pb_selection_upgrade.php</install>
 	<pipeline>
-		<nom>declarer_tables_principales</nom>
+		<nom>declarer_tables_objets_sql</nom>
 		<inclure>base/pb_selection_install.php</inclure>
 	</pipeline>
 	<pipeline>

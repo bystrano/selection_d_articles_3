@@ -5,22 +5,25 @@
 //
 if (!defined("_ECRIRE_INC_VERSION")) return;
 
-function pb_selection_declarer_tables_principales($tables_principales){
+function pb_selection_declarer_tables_objets_sql ($tables){
 
-    $spip_pb_selection = array(
-        "id_selection" => "varchar(60) NOT NULL",
-        "id_article"   => "bigint(21) NOT NULL",
-        "ordre"        => "bigint(21) NOT NULL",
-        "maj"          => "TIMESTAMP"
+    $tables['spip_articles']['tables_jointures'][] = 'pb_selection';
+
+    $tables['spip_pb_selection'] = array(
+        'field' => array(
+            "id_selection" => "varchar(60) NOT NULL",
+            "id_article"   => "bigint(21) NOT NULL",
+            "ordre"        => "bigint(21) NOT NULL",
+            "maj"          => "TIMESTAMP"
+        ),
+        'key'   => array(
+            "PRIMARY KEY"   => "id_selection, id_article"
+        ),
+        'join' => array(
+            'id_article' => 'id_article',
+        ),
+        'tables_jointures' => array('spip_articles'),
     );
 
-    $spip_pb_selection_key = array(
-        "PRIMARY KEY"   => "id_selection, id_article"
-    );
-
-    $tables_principales['spip_pb_selection'] = array(
-        'field' => &$spip_pb_selection,
-        'key'   => &$spip_pb_selection_key);
-
-    return $tables_principales;
+    return $tables;
 }
