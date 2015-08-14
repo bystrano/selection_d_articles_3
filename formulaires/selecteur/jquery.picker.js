@@ -76,6 +76,8 @@ item_picked et picker doivent seulement etre voisins
     }
     else
       sel.parent().addClass('on');
+
+    this.trigger('change');
     return this; // don't break the chain
   }
   jQuery.fn.item_unpick = function(){
