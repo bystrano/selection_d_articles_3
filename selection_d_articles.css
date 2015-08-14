@@ -1,0 +1,39 @@
+li.saisie_selection_d_articles {
+  padding: 0 10px; }
+  li.saisie_selection_d_articles > label {
+    float: none;
+    margin-left: 0;
+    background: url("imgs/emblem-favorite.png") no-repeat left -3px;
+    padding-left: 30px;
+    font-weight: bold;
+    line-height: 2; }
+  li.saisie_selection_d_articles .saisie_selecteur_article ul.select {
+    width: 85%; }
+  li.saisie_selection_d_articles .saisie_selecteur_article li.article {
+    display: table;
+    width: 100%;
+    border-collapse: collapse; }
+    li.saisie_selection_d_articles .saisie_selecteur_article li.article > span {
+      display: table-cell;
+      vertical-align: middle;
+      width: 100%;
+      padding: 0 7px;
+      text-align: left; }
+      li.saisie_selection_d_articles .saisie_selecteur_article li.article > span.puce_objet {
+        width: 100px; }
+        li.saisie_selection_d_articles .saisie_selecteur_article li.article > span.puce_objet img {
+          position: relative;
+          top: -3px; }
+      li.saisie_selection_d_articles .saisie_selecteur_article li.article > span.logo {
+        width: 50px;
+        display: block; }
+      li.saisie_selection_d_articles .saisie_selecteur_article li.article > span .date {
+        font-weight: normal;
+        font-size: 13px;
+        float: right; }
+  li.saisie_selection_d_articles .saisie_selecteur_article .item_picker {
+    clear: none;
+    float: right;
+    width: 100%; }
+  li.saisie_selection_d_articles .saisie_selecteur_article .sep {
+    display: none !important; }
