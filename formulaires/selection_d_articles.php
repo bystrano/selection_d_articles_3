@@ -26,7 +26,7 @@ function formulaires_selection_d_articles_saisies ($id_selection, $nom_form) {
 function formulaires_selection_d_articles_charger_dist ($id_selection, $nom_form) {
 
     $contexte = selection_d_articles_charger($id_selection);
-    $contexte['nom_classe'] = str_replace(' ', '-', translitteration(strtolower($nom_form)));
+    $contexte['id_selection'] = $id_selection;
 
     return $contexte;
 }

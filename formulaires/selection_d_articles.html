@@ -1,6 +1,4 @@
-[(#SET{classe_form, formulaire_selection_d_articles-[(#ENV{nom_classe}|couper{24,''})]})]
-
-<div class="formulaire_spip formulaire_selection_d_articles #GET{classe_form}">
+<div class="formulaire_spip formulaire_selection_d_articles formulaire_selection_#ENV{id_selection}">
 
   [<div class="reponse_formulaire reponse_formulaire_erreur">
     (#ENV*{message_erreur})
@@ -29,16 +27,16 @@
    $(function () {
      /* On fait apparaître le message d'avertissement quand le
         formulaire a changé sans submit */
-     $('.#GET{classe_form}').change(function () {
+     $('.formulaire_selection_#ENV{id_selection}').change(function () {
        $(this).find('.notice').removeClass('none-js');
      });
 
      /* On masque le bouton "Ajouter" au début */
-     var bouton_ajouter = $('.#GET{classe_form}').find('.saisie_liste > fieldset > input[type="submit"]');
+     var bouton_ajouter = $('.formulaire_selection_#ENV{id_selection}').find('.saisie_liste > fieldset > input[type="submit"]');
      bouton_ajouter.hide();
 
      /* Le dernier bouton modifier devient un "ajouter" */
-     $('.#GET{classe_form}').find('ul.saisie-liste > li').last().find('.picker_bouton a').text('Ajouter');
+     $('.formulaire_selection_#ENV{id_selection}').find('ul.saisie-liste > li').last().find('.picker_bouton a').text('Ajouter');
    });
   </script>
 </div>
