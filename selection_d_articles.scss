@@ -1,6 +1,6 @@
 .formulaire_selection_d_articles {
 
-  li.saisie_liste {
+  .saisie_liste {
 
     padding: 0 10px;
 
@@ -15,10 +15,10 @@
     }
 
     .saisie_selecteur_article {
-      ul.select {
+      .select {
         width: 85%;
       }
-      li.article {
+      .article {
         display: table;
         width: 100%;
         border-collapse: collapse;
