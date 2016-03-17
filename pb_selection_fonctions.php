@@ -15,7 +15,7 @@ function selection_d_articles_charger($id_selection) {
 	$valeurs_saisie_selection = array();
 	foreach ($selection as $i => $article) {
 		$valeurs_saisie_selection[$i] = array(
-			'article' => 'article|' . $article['id_article']
+			'article' => 'article' . $article['id_article']
 		);
 	}
 
@@ -56,7 +56,7 @@ function enregistrer_selection($id_selection, $selection) {
 	);
 
 	foreach ($selection as $i => $article) {
-		$id_article = str_replace('article|', '', $article['article'][0]);
+		$id_article = str_replace('article', '', $article['article']);
 		sql_insertq('spip_pb_selection', array(
 			'id_selection' => $id_selection,
 			'id_article'   => $id_article,
