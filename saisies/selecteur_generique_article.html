@@ -1,0 +1,17 @@
+[(#SET{params, #ARRAY{objets, #LISTE{articles}}|json_encode{1}|attribut_html})]
+[(#SET{attributs, data-selecteur="generique" data-select-php="oui" data-select-params="[(#GET{params})]"})]
+
+[(#SET{id_article, #ENV{valeur}|replace{^article, ''}})]
+
+<BOUCLE_article(ARTICLES){id_article=#GET{id_article}}>
+
+  <div class="description">
+    [(#LOGO_ARTICLE|image_reduire{20,20})]
+    <strong class="titre">
+      #TITRE
+    </strong>
+  </div>
+
+</BOUCLE_article>
+
+[(#INCLURE{fond=saisies/input, attributs=#GET{attributs}, env})]

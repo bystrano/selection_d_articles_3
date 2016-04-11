@@ -13,17 +13,10 @@ function formulaires_selection_d_articles_saisies ($id_selection, $nom_form) {
             ),
             'saisies' => array(
                 array(
-                    'saisie' => 'input',
+                    'saisie' => 'selecteur_generique_article',
                     'options' => array(
                         'nom' => 'article',
                         'placeholder' => 'Saisissez le titre de l\'article',
-                        'attributs' => 'data-selecteur="generique" '
-                        . 'data-select-php="oui"'
-                        . ' data-select-params="'.attribut_html(json_encode(
-	                        array('objets' => array('articles')),
-	                        JSON_HEX_TAG
-                        ))
-                        . '"'
                     ),
                 ),
             ),
