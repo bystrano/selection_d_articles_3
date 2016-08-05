@@ -1,22 +1,21 @@
 <?php
-if (!defined("_ECRIRE_INC_VERSION")) return;
 
-function pb_selection_install ($action,$prefix,$version_cible) {
+function pb_selection_install($action, $prefix, $version_cible) {
 		global $tables_principales;
 
-		include_spip("base/pb_selection_install");
+		include_spip('base/pb_selection_install');
 		$tables_principales = pb_selection_declarer_tables_objets_sql($tables_principales);
 
 		include_spip('base/create');
-    include_spip('base/abstract_sql');
+	include_spip('base/abstract_sql');
 
-    creer_base();
+	creer_base();
 
-    return true;
+	return true;
 }
 
-function pb_selection_vider_tables ($nom_meta_base_version) {
+function pb_selection_vider_tables($nom_meta_base_version) {
 
-  sql_drop_table('spip_pb_selection');
-  effacer_meta($nom_meta_base_version);
+	sql_drop_table('spip_pb_selection');
+	effacer_meta($nom_meta_base_version);
 }
