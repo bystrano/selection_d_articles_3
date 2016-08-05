@@ -2,6 +2,14 @@
 
 function selection_d_articles_charger($id_selection) {
 
+	/* On ne peut pas utiliser de nombres pour l'id_selection, puisqu'il sera
+		 utilisé comme clé dans un tableau. Or PHP converti automatiquement les
+		 strings qui représentent des nombres en index numériques, et ça met le
+		 brun… */
+	if (is_numeric($id_selection)) {
+		erreur_squelette(_T('selection_d_articles_3:erreur_id_selection_invalide'));
+	}
+
 	include_spip('base/abstract_sql');
 
 	$selection = sql_allfetsel(
